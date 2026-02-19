@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>aurella_jewells</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<style>
+
+/* ---------- ROOT COLORS ---------- */
+:root {
+  --primary: #0F3D3E;
+  --light-bg: #FAF9F6;
+  --text-dark: #333333;
+}
+
+body {
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  background-color: var(--light-bg);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: var(--primary) !important;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: var(--text-dark) !important;
+  transition: 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary) !important;
+  text-decoration: underline;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  height: 420px;
+  background: url("hero.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+.hero-content {
+  position: relative;
+  color: white;
+  animation: fadeIn 1.5s ease;
+}
+
+.hero h1 {
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 10px 28px;
+  border-radius: 30px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  transition: 0.3s ease;
+}
+
+.hero button:hover {
+  transform: scale(1.05);
+  background: #0A2E2F;
+}
+
+/* ---------- CATEGORIES ---------- */
+.categories {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.categorylist {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  list-style: none;
+  padding: 10px 0;
+}
+
+.listitem {
+  background: #f2f2f2;
+  padding: 14px 24px;
+  border-radius: 30px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.listitem:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* ---------- PRODUCTS ---------- */
+.productcard {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  transition: 0.3s ease;
+}
+
+.productcard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.productcard img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+.productcard:hover img {
+  transform: scale(1.05);
+}
+
+.card-body {
+  text-align: center;
+  padding: 15px;
+}
+
+.price {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* ---------- BEST SECTION ---------- */
+.best {
+  text-align: center;
+  margin: 60px 0;
+}
+
+.best img {
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 20px;
+  margin: 0 10px;
+  background: rgba(255,255,255,0.1);
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* ---------- ANIMATION ---------- */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@media(max-width:768px){
+  .hero h1{font-size:28px;}
+  .best img{width:200px;}
+}
+
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+<div class="container">
+<a class="navbar-brand" href="#">aurella_jewells</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="nav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-content">
+<h1>Elegance That Speaks</h1>
+<button>View Collection</button>
+</div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories container">
+<h3>Categories</h3>
+<ul class="categorylist">
+<li class="listitem">Necklaces</li>
+<li class="listitem">Pendants</li>
+<li class="listitem">Earrings</li>
+<li class="listitem">Bracelets</li>
+<li class="listitem">Rings</li>
+<li class="listitem">Watches</li>
+<li class="listitem">Chains</li>
+<li class="listitem">Hair Accessories</li>
+<li class="listitem">Anklets</li>
+<li class="listitem">Gift Sets</li>
+</ul>
+</section>
+
+<!-- PRODUCTS -->
+<section class="container mb-5">
+<div class="row g-4">
+
+<!-- PRODUCTS -->
+<section class="container mb-5">
+<div class="row g-4">
+
+<!-- PRODUCT CARD TEMPLATE REPEATED -->
+
+<!-- 1 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="Earring.jpeg" alt="">
+<div class="card-body">
+<h6>Emerald Drop Earrings</h6>
+<p class="price">PKR 3,200</p>
+</div>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="Necklace.jpeg" alt="">
+<div class="card-body">
+<h6>Minimal Gold Necklace</h6>
+<p class="price">PKR 4,800</p>
+</div>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="Pendant (2).jpeg" alt="">
+<div class="card-body">
+<h6>Crystal Bracelet</h6>
+<p class="price">PKR 2,900</p>
+</div>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="catcher3.jpeg" alt="">
+<div class="card-body">
+<h6>Luxury Catchers</h6>
+<p class="price">PKR 6,500</p>
+</div>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="Pendant (2).jpeg" alt="">
+<div class="card-body">
+<h6>Classic Silver Chain</h6>
+<p class="price">PKR 3,000</p>
+</div>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="Pendant (3).jpeg" alt="">
+<div class="card-body">
+<h6>Rose Gold Pendant</h6>
+<p class="price">PKR 4,100</p>
+</div>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="Watch.jpeg" alt="">
+<div class="card-body">
+<h6>Elegant Watch</h6>
+<p class="price">PKR 8,900</p>
+</div>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="Pendant (1).jpeg" alt="">
+<div class="card-body">
+<h6>Vintage Anklet</h6>
+<p class="price">PKR 2,500</p>
+</div>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="Earring2.jpeg" alt="">
+<div class="card-body">
+<h6>Statement Earrings</h6>
+<p class="price">PKR 3,700</p>
+</div>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="hero.jpg" alt="">
+<div class="card-body">
+<h6>Premium Bracelet Set</h6>
+<p class="price">PKR 5,400</p>
+</div>
+</div>
+</div>
+
+<!-- 11 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="Catcher2.jpeg" alt="">
+<div class="card-body">
+<h6>Luxury Hair Accessory</h6>
+<p class="price">PKR 2,200</p>
+</div>
+</div>
+</div>
+
+<!-- 12 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="ring.jpg" alt="">
+<div class="card-body">
+<h6>Royal Emerald Ring</h6>
+<p class="price">PKR 6,900</p>
+</div>
+</div>
+</div>
+
+<!-- 13 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="Pendant (3).jpeg" alt="">
+<div class="card-body">
+<h6>Classic Pearl Necklace</h6>
+<p class="price">PKR 4,600</p>
+</div>
+</div>
+</div>
+
+<!-- 14 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="stud.jpg" alt="">
+<div class="card-body">
+<h6>Modern Gold Hoops</h6>
+<p class="price">PKR 3,100</p>
+</div>
+</div>
+</div>
+
+<!-- 15 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="giftbox.jpg" alt="">
+<div class="card-body">
+<h6>Luxury Gift Box Set</h6>
+<p class="price">PKR 7,200</p>
+</div>
+</div>
+</div>
+
+<!-- 16 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="bracelet.jpeg" alt="">
+<div class="card-body">
+<h6>Minimal Chain Bracelet</h6>
+<p class="price">PKR 2,800</p>
+</div>
+</div>
+</div>
+
+<!-- 17 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="hero.jpg" alt="">
+<div class="card-body">
+<h6>Royal Ruby Pendant</h6>
+<p class="price">PKR 5,900</p>
+</div>
+</div>
+</div>
+
+<!-- 18 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="hero.jpg" alt="">
+<div class="card-body">
+<h6>Silver Layered Necklace</h6>
+<p class="price">PKR 3,600</p>
+</div>
+</div>
+</div>
+
+<!-- 19 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="stud.jpg" alt="">
+<div class="card-body">
+<h6>Elegant Diamond Studs</h6>
+<p class="price">PKR 4,300</p>
+</div>
+</div>
+</div>
+
+<!-- 20 -->
+<div class="col-6 col-md-4 col-lg-3">
+<div class="productcard">
+<img src="ring2.jpg" alt="">
+<div class="card-body">
+<h6>Classic Gold Ring</h6>
+<p class="price">PKR 5,000</p>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+</div>
+</section>
+
+<!-- BEST SECTION -->
+<section class="best">
+<h3>Best of the Week</h3>
+<img src="Pendant (2).jpeg" alt="">
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<h5>Connect With Us</h5>
+<div class="social-icons">
+<a href="#"><i class="bi bi-instagram"></i></a>
+<a href="#"><i class="bi bi-facebook"></i></a>
+<a href="#"><i class="bi bi-envelope-fill"></i></a>
+</div>
+<p class="mt-3">© 2026 BrandName. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

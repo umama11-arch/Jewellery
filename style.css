@@ -1,0 +1,32 @@
+
+@media (min-width: 1200px) {
+  .col-xl-5th {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+
+@media screen and (max-width:800px) {
+    .hero{
+        height: 300px;
+    }
+    .products{
+    margin-top: 25px;
+}
+.price{
+    font-size: 15px;
+    font-weight: bolder;
+}
+.cardtext{
+    font-size: 13px;
+}
+.productcard img{
+    height: 180px;
+    width:180px;
+}
+.best img{
+    height: 250px;
+    width: 250px;
+}
+}
