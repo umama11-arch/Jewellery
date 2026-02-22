@@ -7,6 +7,43 @@
 }
 
 
+
+.productcard .card-body button{
+width: 100%;
+margin-top: 6px;
+padding: 8px;
+border-radius: 8px;
+font-size: 14px;
+font-weight: 500;
+cursor: pointer;
+transition: 0.3s;
+}
+
+/* Add to Cart */
+.add-to-cart-btn{
+background-color:#0F3D3E ;
+color: white;
+border: none;
+}
+
+.add-to-cart-btn:hover{
+    background-color: #0A2E2F;
+transform: scale(1.03);
+box-shadow: rgba(15,61,62,0.3);
+}
+
+/* Order Now */
+.order-now-btn{
+background: transparent;
+border:2px solid #0F3D3E;
+color: #0F3D3E;
+/* border: 1px solid #b8965a; */
+}
+
+.order-now-btn:hover{
+background: #0F3D3E;
+color: white;
+}
 @media screen and (max-width:800px) {
     .hero{
         height: 300px;
